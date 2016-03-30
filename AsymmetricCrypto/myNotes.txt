@@ -1,0 +1,5 @@
+https://github.com/DigitalLeaves/AsymmetricCrypto
+
+http://digitalleaves.com/blog/2015/08/commoncrypto-in-swift/
+
+https://digitalleaves.com/blog/2015/10/asymmetric-cryptography-in-swift/
