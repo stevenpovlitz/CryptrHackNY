@@ -14,10 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var keyPairButton: UIButton!
     
     @IBOutlet weak var clearTextTextfield: UITextField!
-    @IBOutlet weak var cypherButton: UIButton!
     @IBOutlet weak var signButton: UIButton!
     @IBOutlet weak var cypheredTextTextfield: UITextField!
-    @IBOutlet weak var decypherButton: UIButton!
     @IBOutlet weak var verifySignatureButton: UIButton!
     
     // data
@@ -31,9 +29,7 @@ class ViewController: UIViewController {
                 keyPairButton.setTitle("Generate keypair", forState: .Normal)
             }
             signButton.enabled = keyPairExists
-            cypherButton.enabled = keyPairExists
             verifySignatureButton.enabled = keyPairExists
-            decypherButton.enabled = keyPairExists
         }
     }
     
@@ -74,27 +70,6 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func cypherText(sender: AnyObject) {
-        // safety check.
-        if clearTextTextfield.text!.isEmpty {
-            self.showAlertWithFadingOutMessage("Please, insert a clear text in the upper textfield.")
-            return
-        }
-        self.view.userInteractionEnabled = false
-        self.cypheredTextTextfield.text = ""
-        self.view.endEditing(true)
-        AsymmetricCryptoManager.sharedInstance.encryptMessageWithPublicKey(clearTextTextfield.text!) { (success, data, error) -> Void in
-            if success {
-                let b64encoded = data!.base64EncodedStringWithOptions([])
-                self.cypheredTextTextfield.text = b64encoded
-                self.clearTextTextfield.text = ""
-            } else {
-                self.showAlertWithFadingOutMessage("Error cyphering data: \(error)")
-            }
-            self.view.userInteractionEnabled = true
-        }
-    }
-    
     @IBAction func signText(sender: AnyObject) {
         // safety check.
         if clearTextTextfield.text!.isEmpty {
@@ -110,30 +85,6 @@ class ViewController: UIViewController {
                 self.cypheredTextTextfield.text = b64encoded
             } else {
                 self.showAlertWithFadingOutMessage("Error signing message: \(error)")
-            }
-            self.view.userInteractionEnabled = true
-        }
-    }
-    
-    @IBAction func decypherText(sender: AnyObject) {
-        // safety check.
-        if cypheredTextTextfield.text!.isEmpty {
-            self.showAlertWithFadingOutMessage("Please, insert a cyphered, base64 encoded text in the lower textfield.")
-            return
-        }
-        guard let encryptedData = NSData(base64EncodedString: cypheredTextTextfield.text!, options: []) else {
-            self.showAlertWithFadingOutMessage("Unable to base64 decode the input string.")
-            return
-        }
-        self.view.userInteractionEnabled = false
-        self.clearTextTextfield.text = ""
-        self.view.endEditing(true)
-        AsymmetricCryptoManager.sharedInstance.decryptMessageWithPrivateKey(encryptedData) { (success, result, error) -> Void in
-            if success {
-                self.clearTextTextfield.text = result!
-                self.cypheredTextTextfield.text = ""
-            } else {
-                self.showAlertWithFadingOutMessage("Error decoding base64 string: \(error)")
             }
             self.view.userInteractionEnabled = true
         }
