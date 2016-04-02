@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Keys View Controller-->
         <scene sceneID="A4F-Ye-JQz">
             <objects>
-                <viewController id="RGB-Vf-wSD" sceneMemberID="viewController">
+                <viewController id="RGB-Vf-wSD" customClass="KeysViewController" customModule="AsymmetricCrypto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tA4-ag-r4H"/>
                         <viewControllerLayoutGuide type="bottom" id="apa-8j-Bsb"/>
@@ -44,6 +44,9 @@
                                 <state key="normal" title="Import Public Key">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="importKeyButton:" destination="RGB-Vf-wSD" eventType="touchUpInside" id="ayN-21-dW0"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NiN-oD-VKo">
                                 <rect key="frame" x="0.0" y="159" width="375" height="91"/>
@@ -61,17 +64,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdt-i5-2QT">
-                                <rect key="frame" x="164" y="423" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="Lal-GA-ZsI"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="importKeysButton" destination="xbp-D4-Tuq" id="cj5-Pj-vPP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iQc-2k-uQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

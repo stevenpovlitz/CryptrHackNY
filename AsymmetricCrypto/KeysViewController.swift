@@ -18,8 +18,7 @@ class KeysViewController: UIViewController {
                 // TODO: notate that the key fiends are empty, maybe make a generate key button not grey?
                 
             }
-            signButton.enabled = keyPairExists
-            verifySignatureButton.enabled = keyPairExists
+
         }
     }
     
@@ -39,5 +38,10 @@ class KeysViewController: UIViewController {
     }
     
     
+    @IBAction func importKeyButton(sender: AnyObject) {
+        
+        dismissViewControllerAnimated(true, completion: {} )
+        
+    }
 
 }
