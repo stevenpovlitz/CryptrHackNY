@@ -3,7 +3,6 @@
 //  AsymmetricCrypto
 //
 //  Created by Ignacio Nieto Carvajal on 4/10/15.
-//  Copyright © 2015 Ignacio Nieto Carvajal. All rights reserved.
 //
 
 import UIKit
