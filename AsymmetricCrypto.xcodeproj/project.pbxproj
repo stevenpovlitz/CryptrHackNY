@@ -14,6 +14,7 @@
 		66D487181BC114CB009F2E52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66D487161BC114CB009F2E52 /* LaunchScreen.storyboard */; };
 		66D487201BC11518009F2E52 /* AsymmetricCryptoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D4871F1BC11518009F2E52 /* AsymmetricCryptoManager.swift */; };
 		66D487251BC12828009F2E52 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D487241BC12828009F2E52 /* UIViewController+Alerts.swift */; };
+		B06DE5781CB0472600B4E649 /* KeysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06DE5771CB0472600B4E649 /* KeysViewController.swift */; };
 		B0B6ECE51CAC2A5800C0EED6 /* myNotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0B6ECE41CAC2A5800C0EED6 /* myNotes.txt */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		66D4871F1BC11518009F2E52 /* AsymmetricCryptoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsymmetricCryptoManager.swift; sourceTree = "<group>"; };
 		66D487211BC121A0009F2E52 /* AsymmetricCrypto-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsymmetricCrypto-Bridging-Header.h"; sourceTree = "<group>"; };
 		66D487241BC12828009F2E52 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		B06DE5771CB0472600B4E649 /* KeysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeysViewController.swift; sourceTree = "<group>"; };
 		B0B6ECE41CAC2A5800C0EED6 /* myNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = myNotes.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,9 +63,9 @@
 		66D4870C1BC114CA009F2E52 /* AsymmetricCrypto */ = {
 			isa = PBXGroup;
 			children = (
+				B06DE5761CB045DA00B4E649 /* View Controllers */,
 				66D4870D1BC114CA009F2E52 /* AppDelegate.swift */,
 				66D487241BC12828009F2E52 /* UIViewController+Alerts.swift */,
-				66D4870F1BC114CA009F2E52 /* ViewController.swift */,
 				66D487111BC114CA009F2E52 /* Main.storyboard */,
 				66D487141BC114CB009F2E52 /* Assets.xcassets */,
 				66D487161BC114CB009F2E52 /* LaunchScreen.storyboard */,
@@ -73,6 +75,15 @@
 				B0B6ECE41CAC2A5800C0EED6 /* myNotes.txt */,
 			);
 			path = AsymmetricCrypto;
+			sourceTree = "<group>";
+		};
+		B06DE5761CB045DA00B4E649 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				66D4870F1BC114CA009F2E52 /* ViewController.swift */,
+				B06DE5771CB0472600B4E649 /* KeysViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +163,7 @@
 				66D4870E1BC114CA009F2E52 /* AppDelegate.swift in Sources */,
 				66D487201BC11518009F2E52 /* AsymmetricCryptoManager.swift in Sources */,
 				66D487251BC12828009F2E52 /* UIViewController+Alerts.swift in Sources */,
+				B06DE5781CB0472600B4E649 /* KeysViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

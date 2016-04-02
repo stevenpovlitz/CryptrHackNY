@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Keys View Controller-->
         <scene sceneID="A4F-Ye-JQz">
             <objects>
-                <viewController id="RGB-Vf-wSD" sceneMemberID="viewController">
+                <viewController id="RGB-Vf-wSD" customClass="KeysViewController" customModule="AsymmetricCrypto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tA4-ag-r4H"/>
                         <viewControllerLayoutGuide type="bottom" id="apa-8j-Bsb"/>
@@ -44,6 +44,9 @@
                                 <state key="normal" title="Import Public Key">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="importKeyButton:" destination="RGB-Vf-wSD" eventType="touchUpInside" id="ayN-21-dW0"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NiN-oD-VKo">
                                 <rect key="frame" x="0.0" y="159" width="375" height="91"/>
@@ -65,10 +68,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="importKeysButton" destination="xbp-D4-Tuq" id="cj5-Pj-vPP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iQc-2k-uQ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="428.5" y="656.5"/>
+            <point key="canvasLocation" x="420.5" y="656.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -158,6 +164,16 @@
                                     <action selector="verifySignature:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RRt-bK-3aN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5I-Me-lMu">
+                                <rect key="frame" x="110" y="479" width="156" height="43"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Move to Key Screen">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RGB-Vf-wSD" kind="show" id="ZDn-VC-tWn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -170,6 +186,7 @@
                             <constraint firstItem="kkT-sX-2Lu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BKS-Za-Ghd"/>
                             <constraint firstItem="f1A-A8-4kJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Br1-9z-mvH"/>
                             <constraint firstItem="22w-oY-3kk" firstAttribute="top" secondItem="7Oc-gW-REn" secondAttribute="bottom" constant="24" id="FN6-rB-F66"/>
+                            <constraint firstItem="w5I-Me-lMu" firstAttribute="top" secondItem="kla-S3-7i3" secondAttribute="bottom" constant="29" id="Hf2-Qc-e8n"/>
                             <constraint firstItem="TCy-Eu-9P5" firstAttribute="top" secondItem="mvS-yU-sUC" secondAttribute="bottom" constant="8" id="Ipr-vY-bRn"/>
                             <constraint firstAttribute="trailing" secondItem="f1A-A8-4kJ" secondAttribute="trailing" id="JeR-eV-TT3"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f1A-A8-4kJ" secondAttribute="bottom" id="KYG-bM-h9g"/>
@@ -177,6 +194,7 @@
                             <constraint firstItem="kla-S3-7i3" firstAttribute="top" secondItem="TCy-Eu-9P5" secondAttribute="bottom" constant="8" id="Q9d-y4-Xe9"/>
                             <constraint firstItem="7Oc-gW-REn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R2f-QK-o0f"/>
                             <constraint firstItem="kkT-sX-2Lu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="RlV-XT-pCd"/>
+                            <constraint firstItem="w5I-Me-lMu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S9f-G3-kr6"/>
                             <constraint firstItem="kkT-sX-2Lu" firstAttribute="top" secondItem="c1D-lJ-lUT" secondAttribute="bottom" constant="8" id="VIz-lo-6qo"/>
                             <constraint firstItem="22w-oY-3kk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XPN-gb-q9H"/>
                             <constraint firstItem="kla-S3-7i3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jOE-oh-SKt"/>
@@ -200,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="657"/>
+            <point key="canvasLocation" x="912.5" y="656.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3W2-xf-bxQ">
