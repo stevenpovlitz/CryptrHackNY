@@ -107,7 +107,7 @@
 				TargetAttributes = {
 					66D487091BC114CA009F2E52 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 4RR2D42CA9;
+						DevelopmentTeam = Z5Q8A42Y9D;
 					};
 				};
 			};
@@ -267,7 +267,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AsymmetricCrypto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.povcopy.AsymmetricCrypto;
+				PRODUCT_BUNDLE_IDENTIFIER = com.povcopy.AsymmetricCrypto2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AsymmetricCrypto/AsymmetricCrypto-Bridging-Header.h";
@@ -284,7 +284,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AsymmetricCrypto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.povcopy.AsymmetricCrypto;
+				PRODUCT_BUNDLE_IDENTIFIER = com.povcopy.AsymmetricCrypto2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AsymmetricCrypto/AsymmetricCrypto-Bridging-Header.h";
