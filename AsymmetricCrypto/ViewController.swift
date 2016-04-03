@@ -159,10 +159,11 @@ class ViewController: UIViewController, ModalViewControllerDelegate {
 //        CameraViewController.ModalViewControllerDelegate=self
 //        CameraViewController.delegate=self;
         //self.presentViewController(CameraViewController, animated: true, completion: nil)
-        
+        if segue.identifier == "showCameraSegue" {
         let destinationVC = segue.destinationViewController as! CameraViewController
         
         destinationVC.delegate = self
+        }
         
     }
     

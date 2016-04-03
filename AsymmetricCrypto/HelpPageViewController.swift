@@ -23,10 +23,6 @@ class HelpPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func doneViewingButton(sender: AnyObject) {
-        dismissViewControllerAnimated(true) { () -> Void in
-        }
-    }
 
     /*
     // MARK: - Navigation
