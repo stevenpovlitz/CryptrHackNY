@@ -15,11 +15,21 @@ class ValidMessageViewController: UIViewController {
     @IBOutlet weak var LabelThreeLabel: UILabel!
     @IBOutlet weak var labelFourLabel: UILabel!
     
+    var labelOneLabelText = String()
+    var labelTwoLabelText = String()
+    var LabelThreeLabelText = String()
+    var labelFourLabelText = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        labelOneLabel.text = labelOneLabelText
+        labelTwoLabel.text = labelTwoLabelText
+        LabelThreeLabel.text = LabelThreeLabelText
+        labelFourLabel.text = labelFourLabelText
+        
     }
 
     override func didReceiveMemoryWarning() {

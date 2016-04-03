@@ -23,6 +23,7 @@ class ViewController: UIViewController, ModalViewControllerDelegate {
     @IBOutlet weak var thirdTextField: UITextField!
     @IBOutlet weak var fourthTextField: UITextField!
     
+//    var infoArr: [String] = (clearTextTextfield.text, secondTextField.text, thirdTextField.text, fourthTextField.text)
     
     // data
     var keyPairExists = AsymmetricCryptoManager.sharedInstance.keyPairExists() {
@@ -79,6 +80,11 @@ class ViewController: UIViewController, ModalViewControllerDelegate {
         view.endEditing(true)
     }
     
+    @IBAction func doneViewingHelp(sender: UIStoryboardSegue){
+        cypheredTextTextfield.text = ""
+        
+    }
+    
     @IBAction func generateKeyPair(sender: AnyObject) {
         self.view.userInteractionEnabled = false
         if keyPairExists { // delete current key pair
@@ -117,7 +123,7 @@ class ViewController: UIViewController, ModalViewControllerDelegate {
                 let b64encoded = data!.base64EncodedStringWithOptions([])
                 self.cypheredTextTextfield.text = b64encoded
                 
-                var clipboardStuff = self.cypheredTextTextfield.text! + "++++++++++" + allText as String
+                var clipboardStuff = self.cypheredTextTextfield.text! /*+ "++++++++++" + allText as String*/
                 
                 UIPasteboard.generalPasteboard().string = clipboardStuff
                 
@@ -143,6 +149,8 @@ class ViewController: UIViewController, ModalViewControllerDelegate {
             return
         }
         
+        print(cypheredTextTextfield.text!)
+        
         guard let rawData = allText.dataUsingEncoding(NSUTF8StringEncoding), let signatureData = NSData(base64EncodedString: cypheredTextTextfield.text!, options: []) else {
             self.showAlertWithFadingOutMessage("Unable to decode or identify input data. Probably one of the input fields is corrupted.")
             return
@@ -150,7 +158,12 @@ class ViewController: UIViewController, ModalViewControllerDelegate {
         self.view.userInteractionEnabled = false
         self.view.endEditing(true)
         AsymmetricCryptoManager.sharedInstance.verifySignaturePublicKey(rawData, signatureData: signatureData) { (success, error) -> Void in
-            self.showAlertWithFadingOutMessage(success ? "Signature verification was successful." : "Error: the signature is not valid for the input text")
+//            
+//            if (success){
+//                
+//            } else {
+                self.showAlertWithFadingOutMessage(success ? "Signature verification was successful.": "Error: the signature is not valid for the input text")
+//            }
             self.view.userInteractionEnabled = true
         }
     }
@@ -163,7 +176,14 @@ class ViewController: UIViewController, ModalViewControllerDelegate {
         let destinationVC = segue.destinationViewController as! CameraViewController
         
         destinationVC.delegate = self
+            
+        } else if segue.identifier == "validSigSegue" {
+            let validMessageViewController = segue.destinationViewController as! ValidMessageViewController
+            //ValidMessageViewController.labelOneLabelText = clearTextTextfield.text
+            //ValidMessageViewController.labelTwoLabelText =
+            
         }
+        
         
     }
     
