@@ -34,11 +34,21 @@ enum AsymmetricCryptoException: ErrorType {
     case OutOfMemory
 }
 
+// used for moving camera QR data into home screen text fields
+private var dataInQR
+
 class AsymmetricCryptoManager: NSObject {
 
     /** Shared instance */
     class var sharedInstance: AsymmetricCryptoManager {
         return _singletonInstance
+    }
+    
+    func setDataInQR(String: dataPar){
+        dataInQR = dataParfoundCode
+    }
+    func getDataInQR(){
+        return dataInQR
     }
     
     // MARK: - Manage keys

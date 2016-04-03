@@ -39,9 +39,50 @@ class ViewController: UIViewController {
         }
     }
     
+    func parseQRCode(String: dataFromQR){
+        var clearText = ""
+        var digitalSignature = ""
+        
+        var isSig = true
+        
+        for (var i = 0; i < count(dataFromQR); i++){
+            
+            if (dataFromQR[i] == "+"){
+                var isEnd = true
+                for (var h = 0; h < 10; h++){
+                    if (dataFromQR[h] != "+"){
+                        isEnd = false
+                    }
+                }
+                if (isEnd == true){
+                    i = i + 10
+                    isSig = false
+                }
+                
+            }
+            
+            if (isSig) {
+                digitalSignature.append(dataFromQR[i])
+            } else{
+                clearText.append(dataFromQR[i])
+            }
+            
+        }
+        
+        clearTextTextfield.text = clearText
+        cypheredTextTextfield.text = digitalSignature
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // TODO: parse QR data
+        clearTextTextfield.text += getDataInQR()
+        setDataInQR("")
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,11 +138,17 @@ class ViewController: UIViewController {
             if success {
                 let b64encoded = data!.base64EncodedStringWithOptions([])
                 self.cypheredTextTextfield.text = b64encoded
+                
+                var clipboardStuff = self.cypheredTextTextfield.text! + "++++++++++" + allText as String
+                
+                UIPasteboard.generalPasteboard().string = clipboardStuff
+                
             } else {
                 self.showAlertWithFadingOutMessage("Error signing message: \(error)")
             }
             self.view.userInteractionEnabled = true
         }
+        
     }
     
     @IBAction func verifySignature(sender: AnyObject) {

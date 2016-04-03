@@ -14,6 +14,7 @@
 		66D487181BC114CB009F2E52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66D487161BC114CB009F2E52 /* LaunchScreen.storyboard */; };
 		66D487201BC11518009F2E52 /* AsymmetricCryptoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D4871F1BC11518009F2E52 /* AsymmetricCryptoManager.swift */; };
 		66D487251BC12828009F2E52 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D487241BC12828009F2E52 /* UIViewController+Alerts.swift */; };
+		B023278B1CB121110048F798 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023278A1CB121110048F798 /* CameraViewController.swift */; };
 		B06DE5781CB0472600B4E649 /* KeysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06DE5771CB0472600B4E649 /* KeysViewController.swift */; };
 		B0B6ECE51CAC2A5800C0EED6 /* myNotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0B6ECE41CAC2A5800C0EED6 /* myNotes.txt */; };
 		EB5455BA1CB0C507007D4286 /* ValidMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5455B91CB0C507007D4286 /* ValidMessageViewController.swift */; };
@@ -31,6 +32,7 @@
 		66D4871F1BC11518009F2E52 /* AsymmetricCryptoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsymmetricCryptoManager.swift; sourceTree = "<group>"; };
 		66D487211BC121A0009F2E52 /* AsymmetricCrypto-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsymmetricCrypto-Bridging-Header.h"; sourceTree = "<group>"; };
 		66D487241BC12828009F2E52 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		B023278A1CB121110048F798 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B06DE5771CB0472600B4E649 /* KeysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeysViewController.swift; sourceTree = "<group>"; };
 		B0B6ECE41CAC2A5800C0EED6 /* myNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = myNotes.txt; sourceTree = "<group>"; };
 		EB5455B91CB0C507007D4286 /* ValidMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidMessageViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				B06DE5771CB0472600B4E649 /* KeysViewController.swift */,
 				EB5455B91CB0C507007D4286 /* ValidMessageViewController.swift */,
 				EB5455BD1CB0F3B9007D4286 /* HelpPageViewController.swift */,
+				B023278A1CB121110048F798 /* CameraViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				EB5455BA1CB0C507007D4286 /* ValidMessageViewController.swift in Sources */,
 				EB5455BE1CB0F3B9007D4286 /* HelpPageViewController.swift in Sources */,
 				66D487201BC11518009F2E52 /* AsymmetricCryptoManager.swift in Sources */,
+				B023278B1CB121110048F798 /* CameraViewController.swift in Sources */,
 				66D487251BC12828009F2E52 /* UIViewController+Alerts.swift in Sources */,
 				B06DE5781CB0472600B4E649 /* KeysViewController.swift in Sources */,
 			);
