@@ -9,9 +9,19 @@
 import AVFoundation
 import UIKit
 
+protocol ModalViewControllerDelegate
+{
+    func sendValue(var value : NSString)
+}
+
 class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
+    
+    var qr : String?
+    
+    
+    var delegate:ModalViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,13 +98,18 @@ class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             foundCode(readableObject.stringValue);
         }
         
+        
+        delegate?.sendValue(qr! as String)
         dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
     func foundCode(code: String) {
-        print(code)
+        //print(code)
         
-        setDataInQR(code)
+        qr = code
+        
+        AsymmetricCryptoManager.sharedInstance.setDataInQR(code)
         
     }
     
@@ -105,4 +120,14 @@ class CameraViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return .Portrait
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+//        let destinationVC = segue.destinationViewController as! CameraViewController
+//
+//        print("preparing for segue. self.qr = \(self.qr)")
+//        
+//        destinationVC.delegat.dataFromQRCode = self.qr
+        
+    }
+    
 }

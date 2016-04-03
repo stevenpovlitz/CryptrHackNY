@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="224.26666666666665" y="621.48666666666668"/>
         </scene>
-        <!--View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="FNn-qO-8A1">
             <objects>
-                <viewController id="go3-KA-lIA" sceneMemberID="viewController">
+                <viewController id="go3-KA-lIA" customClass="CameraViewController" customModule="AsymmetricCrypto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R9T-YT-Bqa"/>
                         <viewControllerLayoutGuide type="bottom" id="65c-21-fVf"/>
@@ -296,6 +296,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMD-ZW-Hix">
+                                <rect key="frame" x="137" y="153" width="98" height="30"/>
+                                <state key="normal" title="Go To Camera"/>
+                                <connections>
+                                    <segue destination="go3-KA-lIA" kind="modal" id="7bR-7W-pM6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -410,7 +417,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="We help you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkD-GJ-Lbv">
                                 <rect key="frame" x="140" y="179" width="94" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

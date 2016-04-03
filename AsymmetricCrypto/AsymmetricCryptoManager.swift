@@ -35,7 +35,7 @@ enum AsymmetricCryptoException: ErrorType {
 }
 
 // used for moving camera QR data into home screen text fields
-private var dataInQR
+private var dataInQR : String = ""
 
 class AsymmetricCryptoManager: NSObject {
 
@@ -44,10 +44,10 @@ class AsymmetricCryptoManager: NSObject {
         return _singletonInstance
     }
     
-    func setDataInQR(String: dataPar){
-        dataInQR = dataParfoundCode
+    func setDataInQR(dataPar : String){
+        dataInQR = dataPar
     }
-    func getDataInQR(){
+    func getDataInQR() -> String{
         return dataInQR
     }
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ModalViewControllerDelegate {
     // MARK: - outlets && buttons
     @IBOutlet weak var keyPairLabel: UILabel!
     @IBOutlet weak var keyPairButton: UIButton!
@@ -39,35 +39,11 @@ class ViewController: UIViewController {
         }
     }
     
-    func parseQRCode(String: dataFromQR){
+    func parseQRCode(dataFromQR : String){
         var clearText = ""
         var digitalSignature = ""
         
-        var isSig = true
-        
-        for (var i = 0; i < count(dataFromQR); i++){
-            
-            if (dataFromQR[i] == "+"){
-                var isEnd = true
-                for (var h = 0; h < 10; h++){
-                    if (dataFromQR[h] != "+"){
-                        isEnd = false
-                    }
-                }
-                if (isEnd == true){
-                    i = i + 10
-                    isSig = false
-                }
-                
-            }
-            
-            if (isSig) {
-                digitalSignature.append(dataFromQR[i])
-            } else{
-                clearText.append(dataFromQR[i])
-            }
-            
-        }
+        // TODO: parse appart cleartext and signature
         
         clearTextTextfield.text = clearText
         cypheredTextTextfield.text = digitalSignature
@@ -79,10 +55,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         // TODO: parse QR data
-        clearTextTextfield.text += getDataInQR()
-        setDataInQR("")
+        AsymmetricCryptoManager.sharedInstance.setDataInQR("")
         
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
     }
 
     override func didReceiveMemoryWarning() {
@@ -177,6 +155,22 @@ class ViewController: UIViewController {
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        CameraViewController.ModalViewControllerDelegate=self
+//        CameraViewController.delegate=self;
+        //self.presentViewController(CameraViewController, animated: true, completion: nil)
+        
+        let destinationVC = segue.destinationViewController as! CameraViewController
+        
+        destinationVC.delegate = self
+        
+    }
+    
+    func sendValue(value: NSString) {
+        cypheredTextTextfield.text = value as String
+        
+        print("value recieved is \(value as String)")
+    }
     
 }
 
