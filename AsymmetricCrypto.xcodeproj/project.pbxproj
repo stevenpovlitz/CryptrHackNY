@@ -16,6 +16,8 @@
 		66D487251BC12828009F2E52 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D487241BC12828009F2E52 /* UIViewController+Alerts.swift */; };
 		B06DE5781CB0472600B4E649 /* KeysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06DE5771CB0472600B4E649 /* KeysViewController.swift */; };
 		B0B6ECE51CAC2A5800C0EED6 /* myNotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = B0B6ECE41CAC2A5800C0EED6 /* myNotes.txt */; };
+		EB5455BA1CB0C507007D4286 /* ValidMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5455B91CB0C507007D4286 /* ValidMessageViewController.swift */; };
+		EB5455BE1CB0F3B9007D4286 /* HelpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5455BD1CB0F3B9007D4286 /* HelpPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		66D487241BC12828009F2E52 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		B06DE5771CB0472600B4E649 /* KeysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeysViewController.swift; sourceTree = "<group>"; };
 		B0B6ECE41CAC2A5800C0EED6 /* myNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = myNotes.txt; sourceTree = "<group>"; };
+		EB5455B91CB0C507007D4286 /* ValidMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidMessageViewController.swift; sourceTree = "<group>"; };
+		EB5455BD1CB0F3B9007D4286 /* HelpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 			children = (
 				66D4870F1BC114CA009F2E52 /* ViewController.swift */,
 				B06DE5771CB0472600B4E649 /* KeysViewController.swift */,
+				EB5455B91CB0C507007D4286 /* ValidMessageViewController.swift */,
+				EB5455BD1CB0F3B9007D4286 /* HelpPageViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -161,6 +167,8 @@
 			files = (
 				66D487101BC114CA009F2E52 /* ViewController.swift in Sources */,
 				66D4870E1BC114CA009F2E52 /* AppDelegate.swift in Sources */,
+				EB5455BA1CB0C507007D4286 /* ValidMessageViewController.swift in Sources */,
+				EB5455BE1CB0F3B9007D4286 /* HelpPageViewController.swift in Sources */,
 				66D487201BC11518009F2E52 /* AsymmetricCryptoManager.swift in Sources */,
 				66D487251BC12828009F2E52 /* UIViewController+Alerts.swift in Sources */,
 				B06DE5781CB0472600B4E649 /* KeysViewController.swift in Sources */,

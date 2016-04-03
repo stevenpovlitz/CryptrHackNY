@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var cypheredTextTextfield: UITextField!
     @IBOutlet weak var verifySignatureButton: UIButton!
     
+    @IBOutlet weak var secondTextField: UITextField!
+    @IBOutlet weak var thirdTextField: UITextField!
+    @IBOutlet weak var fourthTextField: UITextField!
     
     
     // data
@@ -52,6 +55,11 @@ class ViewController: UIViewController {
     }
 
     // MARK: - button actions
+    
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
+    }
+    
     @IBAction func generateKeyPair(sender: AnyObject) {
         self.view.userInteractionEnabled = false
         if keyPairExists { // delete current key pair
@@ -75,14 +83,17 @@ class ViewController: UIViewController {
     
     @IBAction func signText(sender: AnyObject) {
         // safety check.
-        if clearTextTextfield.text!.isEmpty {
+        
+        var allText = clearTextTextfield.text!  + secondTextField.text! + thirdTextField.text! + fourthTextField.text!
+        
+        if allText.isEmpty {
             self.showAlertWithFadingOutMessage("Please, insert the text to be signed in the upper textfield.")
             return
         }
         self.view.userInteractionEnabled = false
         self.cypheredTextTextfield.text = ""
         self.view.endEditing(true)
-        AsymmetricCryptoManager.sharedInstance.signMessageWithPrivateKey(clearTextTextfield.text!) { (success, data, error) -> Void in
+        AsymmetricCryptoManager.sharedInstance.signMessageWithPrivateKey(allText) { (success, data, error) -> Void in
             if success {
                 let b64encoded = data!.base64EncodedStringWithOptions([])
                 self.cypheredTextTextfield.text = b64encoded
@@ -95,7 +106,10 @@ class ViewController: UIViewController {
     
     @IBAction func verifySignature(sender: AnyObject) {
         // safety checks.
-        if clearTextTextfield.text!.isEmpty {
+        
+        var allText = clearTextTextfield.text!  + secondTextField.text! + thirdTextField.text! + fourthTextField.text!
+        
+        if allText.isEmpty {
             self.showAlertWithFadingOutMessage("Please, insert a the text that was signed in the upper textfield.")
             return
         }
@@ -104,7 +118,7 @@ class ViewController: UIViewController {
             return
         }
         
-        guard let rawData = clearTextTextfield.text?.dataUsingEncoding(NSUTF8StringEncoding), let signatureData = NSData(base64EncodedString: cypheredTextTextfield.text!, options: []) else {
+        guard let rawData = allText.dataUsingEncoding(NSUTF8StringEncoding), let signatureData = NSData(base64EncodedString: cypheredTextTextfield.text!, options: []) else {
             self.showAlertWithFadingOutMessage("Unable to decode or identify input data. Probably one of the input fields is corrupted.")
             return
         }
@@ -115,5 +129,7 @@ class ViewController: UIViewController {
             self.view.userInteractionEnabled = true
         }
     }
+    
+    
 }
 
