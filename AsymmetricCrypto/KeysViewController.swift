@@ -37,11 +37,10 @@ class KeysViewController: UIViewController {
         self.keyPairExists = AsymmetricCryptoManager.sharedInstance.keyPairExists()
     }
     
-    
-    @IBAction func importKeyButton(sender: AnyObject) {
-        
+   
+    @IBAction func importKeysButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: {} )
-        
     }
+    
 
 }

@@ -12,10 +12,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var keyPairLabel: UILabel!
     @IBOutlet weak var keyPairButton: UIButton!
     
+    @IBOutlet weak var keyScreen: UIButton!
+    
     @IBOutlet weak var clearTextTextfield: UITextField!
     @IBOutlet weak var signButton: UIButton!
     @IBOutlet weak var cypheredTextTextfield: UITextField!
     @IBOutlet weak var verifySignatureButton: UIButton!
+    
+    
     
     // data
     var keyPairExists = AsymmetricCryptoManager.sharedInstance.keyPairExists() {
