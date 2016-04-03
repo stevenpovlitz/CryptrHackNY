@@ -1,71 +1,32 @@
-# AsymmetricCryptoManager
-AsymmetricCryptoManager is a Swift implementation of an asymmetric cryptography manager to facilitate the use of asymmetric cryptographic operations in Swift. Included is a sample view controller for testing purposes.
+## Inspiration
 
-![](http://digitalleaves.com/blog/wp-content/uploads/2015/10/ezgif.com-optimize.gif)
+Airline tickets, concert tickets, even drivers licenses use encoded but not encrypted 2d bar codes such. This means anyone can make their own fake tickets and identities, and without access to a central database, it is impossible to distinguish the real ones from the fake ones. Internet access and a robust database system are needed to be sure any given identity or ticket was issued by a reputable source. 
 
-## Usage
+That's pretty stupid, because public key cryptography solved this problem decades ago and databases are cumbersome to set up and maintain. With algorithms like RSA, anyone with a public key can check that tickets and identities were issued by the correct authority, and forgers are unable to modify tickets once they are issued. 
 
-AsymmetricCryptoManager follows the Singleton pattern, thus it must be accessed by means of the sharedInstance variable.
+## What it does
 
-### Generating a key pair
+Cryptr uses the RSA algorithm to hash and sign plaintext messages. These messages contain information such as the name of the intended recipient, the event the ticket / ID is for, the date and an ID number. The app can also scan a qr code and verify identities as valid or invalid.
 
-```swift
-AsymmetricCryptoManager.sharedInstance.createSecureKeyPair({ (success, error) -> Void in
-  if success {
-    // start using the key pair.
-  } else { 
-    // handle the error
-  }
-})
-```
+## How we built it
 
-### Encryption: 
+We built this app using Swift on iOS. We relied on library wrappers and other example projects that implemented low-level cryptographic libraries such as CommonCrypto and other functionality such as QR code scanning. 
 
-```swift
-AsymmetricCryptoManager.sharedInstance.encryptMessageWithPublicKey(clearText) { (success, data, error) -> Void in
-  if success {
-    let b64encoded = data!.base64EncodedStringWithOptions([])
-    // transmit b64encoded encrypted string.
-  } else { 
-    // handle the error ...
-  }
-}
-```
+## Challenges we ran into
 
-### Decryption:
+Many of the cryptography libraries available on iOS, especially the CommonCrypto library provided by apple, are very poorly documented and not easily used in a Swift app. 
 
-```swift
-AsymmetricCryptoManager.sharedInstance.decryptMessageWithPrivateKey(encryptedData) { (success, result, error) -> Void in
-  if success {
-    // manage the resulting string.  
-  } else {
-    // manage the error
-  }
-```
+## Accomplishments that I'm proud of
 
-### Sign a message:
+We're proud that we were able to implement RSA securely. We're also quite proud of the design of the app.
 
-```swift
-AsymmetricCryptoManager.sharedInstance.signMessageWithPrivateKey(clearText) { (success, data, error) -> Void in
-  if success {
-    let b64encoded = data!.base64EncodedStringWithOptions([])
-  } else {
-    // manage the error
-  }
-}
-```
+## What I learned
 
-### Verify the signature:
+We were able to find a way to make scanning and creating QR codes quick and easy. In addition to that, we were able to develop a better understanding of the CommonCrypto library.
 
-```swift
-AsymmetricCryptoManager.sharedInstance.verifySignaturePublicKey(rawData, signatureData: signatureData) { (success, error) -> Void in
-  if success {
-    // verification was successful
-  } else {
-    // verification failed.
-  }
-}
-```
+## What's next for Cryptr
+
+As we develop the app more, the user will be taken to a screen that displays the coded information after the signature is verified.
 
 ## LICENSE
 
