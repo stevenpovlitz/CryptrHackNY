@@ -84,7 +84,8 @@ class AsymmetricCryptoManager: NSObject {
         }
     }
     
-    private func getPublicKeyData() -> NSData? {
+    /*private*/ func getPublicKeyData() -> NSData? {
+        
         let parameters = [
             kSecClass as String: kSecClassKey,
             kSecAttrKeyType as String: kSecAttrKeyTypeRSA,
@@ -112,7 +113,7 @@ class AsymmetricCryptoManager: NSObject {
         if status == errSecSuccess { return ref as! SecKeyRef? } else { return nil }
     }
     
-    private func getPrivateKeyReference() -> SecKeyRef? {
+    /*private*/ func getPrivateKeyReference() -> SecKeyRef? {
         let parameters = [
             kSecClass as String: kSecClassKey,
             kSecAttrKeyClass as String: kSecAttrKeyClassPrivate,

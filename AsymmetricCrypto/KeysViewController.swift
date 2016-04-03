@@ -9,6 +9,10 @@ import UIKit
 
 class KeysViewController: UIViewController {
     
+    @IBOutlet weak var publicKeyTextField: UITextField!
+    
+    @IBOutlet weak var privateKeyTextField: UITextField!
+    
     var keyPairExists = AsymmetricCryptoManager.sharedInstance.keyPairExists() {
         didSet {
             if keyPairExists {
@@ -24,6 +28,14 @@ class KeysViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if keyPairExists {
+            publicKeyTextField.text = "\(AsymmetricCryptoManager.sharedInstance.getPublicKeyData()!)"
+            privateKeyTextField.text = "\(AsymmetricCryptoManager.sharedInstance.getPrivateKeyReference()!)"
+        } else {
+            
+        }
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
