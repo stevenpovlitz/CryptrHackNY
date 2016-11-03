@@ -10,7 +10,7 @@ Cryptr uses the RSA algorithm to hash and sign plaintext messages. These message
 
 ## Video Walkthrough
 
-<img src='http://i.imgur.com/zrj0DxZ.gifv' title='walkthru' width='' alt='Wireframe 2' />
+# http://i.imgur.com/zrj0DxZ.gifv
 
 ## How we built it
 
