@@ -8,6 +8,10 @@ That's pretty stupid, because public key cryptography solved this problem decade
 
 Cryptr uses the RSA algorithm to hash and sign plaintext messages. These messages contain information such as the name of the intended recipient, the event the ticket / ID is for, the date and an ID number. The app can also scan a qr code and verify identities as valid or invalid.
 
+## Video Walkthrough
+
+<img src='http://i.imgur.com/zrj0DxZ.gif' title='walkthru' width='' alt='Wireframe 2' />
+
 ## How we built it
 
 We built this app using Swift on iOS. We relied on library wrappers and other example projects that implemented low-level cryptographic libraries such as CommonCrypto and other functionality such as QR code scanning. 
